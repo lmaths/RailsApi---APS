@@ -1,9 +1,9 @@
 module Api::V1
-    class CharactersController < ApiController
-        def index
-            character = Character.all
-            render json: character
-        end
+  class CharactersController < ApiController
+    def index
+      characters = Character.all
+      characters = characters.where('charisma = ?', params[:charisma]) if params[:charisma].present?
+      render json: characters
     end
-    
+  end
 end
