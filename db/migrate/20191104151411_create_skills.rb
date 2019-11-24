@@ -1,7 +1,7 @@
 class CreateSkills < ActiveRecord::Migration[6.0]
   def change
     create_table :skills do |t|
-      t.belongs_to :personagem
+      t.belongs_to :character
       t.string :name
       t.string :ability
       t.boolean :proficient, :default => false

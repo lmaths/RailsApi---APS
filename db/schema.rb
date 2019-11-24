@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 2019_11_04_151411) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer "personagem_id"
+    t.integer "character_id"
     t.string "name"
     t.string "ability"
     t.boolean "proficient", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["personagem_id"], name: "index_skills_on_personagem_id"
+    t.index ["character_id"], name: "index_skills_on_character_id"
   end
 
 end
