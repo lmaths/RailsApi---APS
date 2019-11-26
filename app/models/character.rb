@@ -33,6 +33,10 @@ class Character < ApplicationRecord
         end
        
     end
+
+    def get_names_alunos
+    return "Matheus Lima, Jussara, Fernanda"
+    end
     
     
 
