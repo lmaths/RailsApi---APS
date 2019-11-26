@@ -15,20 +15,19 @@ module Api::V1
             .filter_charisma_less_than(params[:char_lt])
             .filter_character_name(params[:name])
 
-            return render json: @characters.to_json(:include => :skills)
-          end
-        
+            return render json: @characters.to_json(:include => :skills, :except => [:created_at, :updated_at])
+        end
 
           def show
             @characters = Character.find(params[:id])
-            return render json: @characters.to_json(:include => :skills) 
+            return render json: @characters.to_json(:include => :skills, :except => [:created_at, :updated_at]) 
           end
         
         
         def create
             @character = Character.new
             if(@character.save)
-                return render json: character
+                return render json: @characters.to_json(:include => :skills, :except => [:created_at, :updated_at])
             else
         end
     end
